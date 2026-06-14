@@ -15,6 +15,12 @@ the full audit trail underneath.
 > *Deep Thought ran for 7½ million years and returned a single number. Fusion runs a panel of frontier models
 > and returns one grounded answer — plus the receipts.*
 
+<p align="center">
+  <img src="assets/fusion-demo.gif" alt="An illustrative /fusion run: an Opus 4.8 + GPT-5.5 (xhigh) panel answers blind, then Opus judges into one verdict with a consensus / contradictions / blind-spots audit trail" width="860">
+</p>
+
+<p align="center"><sub>An illustrative <code>/fusion</code> run — verdict first, audit trail underneath.</sub></p>
+
 **The counterintuitive part:** you don't need *different* models to beat one model. Even two cold runs of the
 *same* model diverge — different reasoning paths, different searches, different mistakes — and synthesizing
 that divergence beats running it once. Fusion harvests that diversity instead of faking it with personas or
