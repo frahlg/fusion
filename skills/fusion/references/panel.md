@@ -47,14 +47,16 @@ instruction below. Same task, same instruction, for all of them.
 
 ## Panel composition by slug
 
-Chosen by `scripts/detect_panel.sh`. The slug names the **panelists only** — Opus 4.8
-is always the separate driver and judge, and is never replaced by a panelist.
+Chosen by `scripts/detect_panel.sh`. The slug names the **blind panelists** only. When
+a slug contains `opus4.8`, that means an independent Opus 4.8 *panelist* spawned via
+the `Agent` tool — it is **not** the judge. Opus 4.8 *also* remains the separate
+driver/judge that reads the completed panel and writes the final answer; that judging
+pass is never one of the panelists and is never replaced by one.
 
-| Slug | Panelists (all blind, in parallel) | Requires |
+| Slug | Blind panelists (in parallel) | Requires |
 | --- | --- | --- |
-| `opus4.8-gpt5.5` | Opus 4.8 (`Agent`, general-purpose) + GPT-5.5 xhigh (`scripts/run_codex.sh`) | `codex` CLI |
-| `opus4.8-4.8` | two independent Opus 4.8 runs (two separate `Agent` subagents, same prompt) | nothing — universal fallback |
-| `opus4.8-gpt5.5-gemini3.1pro` | the above two + Gemini 3.1 Pro (`gemini` CLI) | `codex` + `gemini` CLIs |
+| `opus4.8-gpt5.5` | one Opus 4.8 panelist (`Agent`, general-purpose) + one GPT-5.5 xhigh panelist (`scripts/run_codex.sh`) | `codex` CLI |
+| `opus4.8-4.8` | two independent Opus 4.8 panelists (two separate `Agent` subagents, same prompt) | nothing — universal fallback |
 
 `opus4.8-4.8` is a real panel, not a no-op: two cold, independent Opus runs diverge
 enough that synthesizing them beats a single run. Always prefer the richest panel

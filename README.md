@@ -37,10 +37,9 @@ panelist models can't call back out to spawn Opus.
 | --- | --- | --- |
 | `opus4.8-gpt5.5` | Opus 4.8 + **GPT-5.5 (xhigh)** in parallel → Opus judges | the `codex` CLI |
 | `opus4.8-4.8` | the **same prompt run twice** as 2 independent Opus 4.8 panelists → Opus judges | nothing — works everywhere (fallback) |
-| `opus4.8-gpt5.5-gemini3.1pro` | Opus 4.8 + GPT-5.5 + **Gemini 3.1 Pro** in parallel → Opus judges | `codex` + `gemini` CLIs |
 
-The skill auto-detects which panelist CLIs are installed and uses the richest panel available, falling back
-gracefully when one is missing. The default is **Opus 4.8 + GPT-5.5 (xhigh)**.
+The skill auto-detects whether the `codex` CLI is installed and usable, and falls back gracefully to the
+pure-Opus panel when it isn't. The default is **Opus 4.8 + GPT-5.5 (xhigh)**.
 
 ## Install
 
@@ -50,8 +49,9 @@ cd fusion
 ./install.sh
 ```
 
-This copies the skill to `~/.claude/skills/fusion` and the `/fusion` command to `~/.claude/commands`, then
-prints which panels your machine can run. Restart Claude Code (or run `/reload-skills`) afterward.
+This copies the skill to `~/.claude/skills/fusion` and prints which panels your machine can run. The skill
+is itself invocable as `/fusion`, so no separate command file is needed. Restart Claude Code (or run
+`/reload-skills`) afterward.
 
 > Override the target with `CLAUDE_CONFIG_DIR=/path/to/.claude ./install.sh`.
 
@@ -70,8 +70,8 @@ of a single answer and runs as slow as its slowest panelist — that's the delib
 ## Requirements
 
 - Claude Code with Opus 4.8 (judge + an always-available panelist via subagents).
-- Optional: the [`codex`](https://github.com/openai/codex) CLI for the GPT-5.5 (xhigh) panelist.
-- Optional: a `gemini` CLI for the three-model panel.
+- Optional: the [`codex`](https://github.com/openai/codex) CLI for the GPT-5.5 (xhigh) panelist. Without it,
+  Fusion runs the pure-Opus `opus4.8-4.8` panel.
 
 ## License
 

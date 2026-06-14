@@ -88,7 +88,7 @@ actually converged.
 - **Keep attribution.** Track which panelist a claim, insight, or working fragment
   came from, so confidence is auditable in the Step 4 trail.
 - **A failed or dropped panelist counts as ABSENT, never as silent agreement.** If a
-  panelist errored, timed out, or its CLI was missing (e.g. `run_codex.sh` exited
-  127), it contributes nothing — do **not** read its silence as endorsing the others.
-  Note the absence and recompute consensus over only the panelists that actually
-  returned.
+  panelist errored, timed out, or its CLI was missing (`run_codex.sh` exits **127**
+  when codex isn't installed and **non-zero** on any other failure), it contributes
+  nothing — do **not** read its silence as endorsing the others. Note the absence and
+  recompute consensus over only the panelists that actually returned.
