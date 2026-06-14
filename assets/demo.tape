@@ -6,10 +6,9 @@ Output assets/fusion-demo.gif
 Set Shell "bash"
 Set FontSize 21
 Set Width 1240
-Set Height 660
-Set Padding 26
-Set Theme "Catppuccin Mocha"
-Set TypingSpeed 35ms
+Set Height 760
+Set Padding 24
+Set Theme "Dracula"
 
 Hide
 Type "clear"
@@ -18,4 +17,4 @@ Type "bash assets/demo.sh"
 Enter
 Sleep 700ms
 Show
-Sleep 9s
+Sleep 10500ms
