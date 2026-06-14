@@ -1,0 +1,9 @@
+# Fusion scratch / panelist artifacts
+/tmp/fusion-*
+*.log
+fusion_*_prompt.txt
+fusion_*_out.md
+
+# OS / editor cruft
+.DS_Store
+*.swp
