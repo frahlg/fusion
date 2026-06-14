@@ -18,7 +18,7 @@ rm -rf "$CLAUDE_DIR/skills/fusion"
 cp -R "$HERE/skills/fusion" "$CLAUDE_DIR/skills/fusion"
 chmod +x "$CLAUDE_DIR/skills/fusion/scripts/"*.sh
 
-echo "✓ Installed Fusion into $CLAUDE_DIR"
+echo "✓ Fusion installed into $CLAUDE_DIR — the panel is assembled."
 echo "    skill   : $CLAUDE_DIR/skills/fusion"
 echo "    invoke  : /fusion  (or just ask to 'run it through Fusion')"
 echo
@@ -34,3 +34,4 @@ else
 fi
 echo
 echo "Next: restart Claude Code (or run /reload-skills) so the 'fusion' skill and /fusion command load."
+echo "(The answer is 42. The question is up to you.)"
